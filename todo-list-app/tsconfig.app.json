@@ -4,5 +4,5 @@
     "composite": true
   },
   "include": [".nuxt/nuxt.d.ts", "src/**/*"],
-  "exclude": []
+  "exclude": ["**/*.stories.ts", "**/*.stories.js"]
 }
