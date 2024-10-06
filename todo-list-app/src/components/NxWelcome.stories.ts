@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import NxWelcome from './NxWelcome.vue';
 
 
