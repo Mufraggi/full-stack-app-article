@@ -33,6 +33,7 @@
     "@storybook/vue3": "^8.2.8",
     "@storybook/vue3-vite": "^8.2.8",
     "@swc-node/register": "~1.9.1",
+    "@swc/cli": "~0.3.12",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
     "@types/jest": "^29.5.12",
@@ -64,13 +65,17 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@nestjs/common": "^10.0.2",
-    "@nestjs/core": "^10.0.2",
+    "@nestjs/common": "^10.4.4",
+    "@nestjs/core": "^10.4.4",
     "@nestjs/platform-express": "^10.0.2",
+    "@nestjs/swagger": "^7.4.2",
     "axios": "^1.6.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.8.0"
+    "reflect-metadata": "^0.1.14",
+    "rxjs": "^7.8.0",
+    "zod": "^3.23.8"
   }
 }
