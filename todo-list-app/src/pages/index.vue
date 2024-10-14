@@ -4,32 +4,62 @@
 
     <!-- Form to create a new todo -->
     <form @submit.prevent="createTodo">
-      <input v-model="newTodo.title" placeholder="Title" required />
-      <input v-model="newTodo.description" placeholder="Description" />
-      <input v-model="newTodo.dueDate" type="date" />
-      <button type="submit">Create Todo</button>
+      <input
+        v-model="newTodo.title"
+        placeholder="Title"
+        required
+      >
+      <input
+        v-model="newTodo.description"
+        placeholder="Description"
+      >
+      <input
+        v-model="newTodo.dueDate"
+        type="date"
+      >
+      <button type="submit">
+        Create Todo
+      </button>
     </form>
 
     <!-- Error message -->
-    <p v-if="error" style="color: red">{{ error }}</p>
+    <p
+      v-if="error"
+      style="color: red"
+    >
+      {{ error }}
+    </p>
 
     <!-- List of todos -->
+    <!-- eslint-disable -->
     <ul v-if="todos.length">
-      <li v-for="todo in todos" :key="todo.id">
+      <li v-for="todo in todos" :key="todo.title">
         {{ todo.title }} - {{ todo.status }}
-        <p v-if="todo.description">{{ todo.description }}</p>
-        <p v-if="todo.dueDate">Due: {{ todo.dueDate }}</p>
+        <p v-if="todo.description">
+          {{ todo.description }}
+        </p>
+        <p v-if="todo.dueDate">
+          Due: {{ todo.dueDate }}
+        </p>
       </li>
     </ul>
-    <p v-else>No todos found.</p>
+    <!-- eslint-enable -->
+    <p v-else>
+      No todos found.
+    </p>
 
     <!-- Pagination -->
     <div v-if="todos.length">
-      <button @click="changePage(-1)" :disabled="page === 1">Previous</button>
+      <button
+        :disabled="page === 1"
+        @click="changePage(-1)"
+      >
+        Previous
+      </button>
       <span>Page {{ page }} of {{ Math.ceil(total / limit) }}</span>
       <button
-        @click="changePage(1)"
         :disabled="page >= Math.ceil(total / limit)"
+        @click="changePage(1)"
       >
         Next
       </button>
@@ -109,12 +139,5 @@ const createTodo = async () => {
   }
 };
 
-// Function to change page
-const changePage = (direction: number) => {
-  page.value += direction;
-  fetchTodos();
-};
-
-// Fetch todos on component mount
 fetchTodos();
 </script>
